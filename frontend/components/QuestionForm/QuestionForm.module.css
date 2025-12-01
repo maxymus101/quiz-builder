@@ -2,7 +2,6 @@
     border: 1px solid #e1e5e9;
     border-radius: 8px;
     padding: 20px;
-    margin-bottom: 20px;
     background: #fff;
 }
 
@@ -19,17 +18,25 @@
 }
 
 .removeBtn {
-    background: #dc3545;
+    display: inline-block;
+    background: linear-gradient(135deg, #764ba2 0%, #dc3545 100%);
     color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
     border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
-    font-size: 14px;
 }
 
 .removeBtn:hover {
-    background: #c82333;
+    transform: translateY(-1.5px);
+    box-shadow: 0 15px 35px rgb(220, 53, 69, 0.6);
 }
 
 .field {
