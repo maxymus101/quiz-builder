@@ -25,7 +25,7 @@ cd backend
 
 npm install
 
-# Set up the database
+# Set up the database (ONLY FIRST TIME or after schema changes)
 
 npx prisma generate
 npx prisma migrate dev --name init
