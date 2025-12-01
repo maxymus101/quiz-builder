@@ -5,12 +5,35 @@
 }
 
 .content {
+    position: relative;
     max-width: 800px;
     margin: 0 auto;
     background: white;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.backLink {
+    display: inline-block;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    position: absolute;
+    top: 33px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.backLink:hover {
+    transform: translateY(-1.5px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
 }
 
 .title {
@@ -69,35 +92,47 @@
 }
 
 .addQuestionBtn {
-    background: #0070f3;
+    display: inline-block;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
     color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-style: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
-    font-weight: 600;
-    transition: background 0.2s;
 }
 
 .addQuestionBtn:hover {
-    background: #0051cc;
+    transform: translateY(-1.5px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
 }
 
 .submitBtn {
-    background: #10b981;
+    display: inline-block;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
     color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border-style: none;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
-    transition: background 0.2s;
-    margin-top: 1rem;
 }
 
 .submitBtn:hover {
-    background: #059669;
+    transform: translateY(-1.5px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
 }
 
 .submitBtn:disabled {

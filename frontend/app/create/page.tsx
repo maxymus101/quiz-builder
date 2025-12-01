@@ -9,6 +9,7 @@ import { Formik, Form, Field, FieldArray } from "formik";
 import * as Yup from "yup";
 import styles from "./page.module.css";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 const QuizSchema = Yup.object().shape({
   title: Yup.string()
@@ -60,6 +61,9 @@ export default function CreateQuizPage() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
+        <Link href="/" className={styles.backLink}>
+          ← Home
+        </Link>
         <h1 className={styles.title}>Create New Quiz</h1>
 
         <Formik
