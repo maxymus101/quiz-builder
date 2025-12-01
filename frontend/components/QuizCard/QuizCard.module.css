@@ -1,0 +1,102 @@
+.card {
+    background: white;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.2s, transform 0.2s;
+    height: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.content {
+    flex: 1;
+}
+
+.title {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+.meta {
+    color: #666;
+    margin: 0 0 8px 0;
+    font-size: 0.9rem;
+}
+
+.date {
+    color: #888;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.viewButton {
+    display: inline-block;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 4px;
+    flex: 1;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.viewButton:hover {
+    transform: translateY(-1.5px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
+}
+
+.deleteButton {
+    display: inline-block;
+    background: linear-gradient(135deg, #764ba2 0%, #dc3545 100%);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.deleteButton:hover {
+    transform: translateY(-1.5px);
+    box-shadow: 0 15px 35px rgb(220, 53, 69, 0.6);
+}
+
+@media (max-width: 768px) {
+    .actions {
+        flex-direction: column;
+    }
+
+    .viewButton {
+        width: 100%;
+    }
+}
