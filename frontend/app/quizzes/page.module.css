@@ -13,23 +13,59 @@
     gap: 20px;
 }
 
+.backLink {
+    display: inline-block;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.backLink:hover {
+    transform: translateY(-1.5px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
+}
+
+.backLink:active {
+    transform: translateY(-1px);
+}
+
+.titleSection {
+    margin-top: 10px;
+}
+
 .title {
     color: #333;
     margin: 0;
 }
 
 .createButton {
-    background: #007bff;
+    display: inline-block;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
     color: white;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
-    transition: background-color 0.2s;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .createButton:hover {
-    background: #0056b3;
+    transform: translateY(-1.5px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
 }
 
 .loading {
@@ -110,38 +146,25 @@
     gap: 10px;
 }
 
-.viewButton {
-    background: #28a745;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    flex: 1;
-    text-align: center;
-    transition: background-color 0.2s;
-}
-
-.viewButton:hover {
-    background: #218838;
-}
-
 .deleteButton {
-    background: #dc3545;
+    display: inline-block;
+    background: linear-gradient(135deg, #764ba2 0%, #dc3545 100%);
     color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .deleteButton:hover {
-    background: #c82333;
+    transform: translateY(-1.5px);
+    box-shadow: 0 15px 35px rgb(220, 53, 69, 0.6);
 }
 
 /* Responsive design */

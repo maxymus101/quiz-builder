@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import toast from "react-hot-toast";
 import styles from "./page.module.css";
+import Loader from "@/components/Loader/Loader";
+import EmptyState from "@/components/EmptyState/EmptyState";
+import QuizCard from "@/components/QuizCard/QuizCard";
 
 export default function QuizzesPage() {
   const [quizzes, setQuizzes] = useState<Quiz[]>([]);
@@ -27,11 +30,7 @@ export default function QuizzesPage() {
     fetchQuizzes();
   }, []);
 
-  const handleDeleteQuiz = async (quizId: string, quizTitle: string) => {
-    if (!confirm(`Are you sure you want to delete "${quizTitle}"?`)) {
-      return;
-    }
-
+  const handleDeleteQuiz = async (quizId: string) => {
     try {
       await api.deleteQuiz(quizId);
       toast.success("Quiz deleted successfully");
@@ -45,7 +44,7 @@ export default function QuizzesPage() {
   if (loading) {
     return (
       <div className={styles.container}>
-        <div className={styles.loading}>Loading quizzes...</div>
+        <Loader />
       </div>
     );
   }
@@ -53,6 +52,9 @@ export default function QuizzesPage() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
+        <Link href="/" className={styles.backLink}>
+          ← Home
+        </Link>
         <h1 className={styles.title}>All Quizzes</h1>
         <Link href="/create" className={styles.createButton}>
           Create New Quiz
@@ -60,46 +62,16 @@ export default function QuizzesPage() {
       </div>
 
       {quizzes.length === 0 ? (
-        <div className={styles.emptyState}>
-          <h2>No quizzes yet</h2>
-          <p>Create your first quiz to get started!</p>
-          <Link href="/create" className={styles.createButton}>
-            Create Your First Quiz
-          </Link>
-        </div>
+        <EmptyState
+          title="No quizzes yet"
+          message="Create your first quiz to get started!"
+          actionText="Create Your First Quiz"
+          actionHref="/create"
+        />
       ) : (
         <div className={styles.quizzesGrid}>
           {quizzes.map((quiz) => (
-            <div key={quiz.id} className={styles.quizCard}>
-              <div className={styles.quizContent}>
-                <h3 className={styles.quizTitle}>{quiz.title}</h3>
-                <p className={styles.quizMeta}>
-                  {quiz.questionCount} question
-                  {quiz.questionCount !== 1 ? "s" : ""}
-                </p>
-                {quiz.createdAt && (
-                  <p className={styles.quizDate}>
-                    Created: {new Date(quiz.createdAt).toLocaleDateString()}
-                  </p>
-                )}
-              </div>
-
-              <div className={styles.quizActions}>
-                <Link
-                  href={`/quizzes/${quiz.id}`}
-                  className={styles.viewButton}
-                >
-                  View Details
-                </Link>
-                <button
-                  onClick={() => handleDeleteQuiz(quiz.id!, quiz.title)}
-                  className={styles.deleteButton}
-                  title="Delete quiz"
-                >
-                  🗑️
-                </button>
-              </div>
-            </div>
+            <QuizCard key={quiz.id} quiz={quiz} onDelete={handleDeleteQuiz} />
           ))}
         </div>
       )}
